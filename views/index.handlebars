@@ -1,3 +1,26 @@
+<div class="jumbotron">
+        <div class="row" id="title">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <h1>Make a Burger</h1>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        <div class="row" id="title">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <h3>Enter your burger craving, then devour it when ready...</h3>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+
+ 
+
 <h2>Not Devoured</h2>
 <ul>
   {{#each burgers}}
@@ -6,7 +29,7 @@
     <l1>{{burger_name}}
       <form class="devour-form" data="{{id}}">
         <input type="hidden" name="devour" value="true">
-        <button type="submit">Devour!</button>
+        <button type="submit" class="btn btn-success">Devour!</button>
       </form>
     </l1>
   </div>
@@ -30,6 +53,5 @@
     <label for="ca"></label>
     <input type="text" id="ca" name="name">
   </div>
-
-  <button type="submit">Add a Burger</button>
+  <button type="submit" class="btn btn-primary">Add a Burger</button>
 </form>
