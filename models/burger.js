@@ -10,15 +10,20 @@ var burger = {
     },
     // The variables cols and vals are arrays.
     insertOne: function(burger_name, cb) {
-        console.log("burger select one")
-        orm.insertOne("burgers", "burger_name", burger_name, function(res) {
+        console.log("burger insert one ", burger_name)
+        orm.insertOne("burgers", ["burger_name", "devoured"], [burger_name, 0], function(res) {
             cb(res);
         });
     },
-    updateOne: function(burger_name, cb) {
-        orm.updateOne("burgers", "burger_name", burger_name, function(res) {
-            cb(res);
-        });
+    updateOne: function(burger_id, cb) {
+        var condition = "id = " + burger_id;
+        orm.update("burgers", {
+                devoured: 1
+            },
+            condition,
+            function(res) {
+                cb(res);
+            });
     }
 };
 

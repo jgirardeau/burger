@@ -1,38 +1,35 @@
-<h1>Cats!</h1>
-
-<h2>Hamburgers Not Devoured</h2>
-
+<h2>Not Devoured</h2>
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-  <h1>{{burger_name}}</h1>
+  {{#unless devoured}}
+  <div>
+    <l1>{{burger_name}}
+      <form class="devour-form" data="{{id}}">
+        <input type="hidden" name="devour" value="true">
+        <button type="submit">Devour!</button>
+      </form>
+    </l1>
+  </div>
+
   {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Hamburgers  Devoured</h2>
+<h2>Devoured</h2>
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
+  {{#if devoured}}
   <h1>{{burger_name}}</h1>
   {{/if}}
   {{/each}}
 </ul>
 
-
-<h2>Add a Cat</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
+    <label for="ca"></label>
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add a Burger</button>
 </form>
