@@ -24,6 +24,14 @@ var burger = {
             function(res) {
                 cb(res);
             });
+    },
+    deleteOne: function(burger_id, cb) {
+        var condition = "id = " + burger_id;
+        orm.delete("burgers",
+            condition,
+            function(res) {
+                cb(res);
+            });
     }
 };
 

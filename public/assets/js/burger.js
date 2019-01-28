@@ -39,4 +39,22 @@ $(function() {
             }
         );
     });
+    $(".delete-form").on("submit", function(event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+        //  alert("devour" + $(this).attr('data'));
+
+        var id = $(this).attr('data');
+
+        // Send the POST request.
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE"
+        }).then(
+            function() {
+                console.log("deleted burger");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
 });
